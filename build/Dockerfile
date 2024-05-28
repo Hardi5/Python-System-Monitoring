@@ -1,5 +1,3 @@
-FIXES:
-
 FROM python:3.9-slim-buster
 
 LABEL Name="Python Flask Demo App" Version=1.4.2

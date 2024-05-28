@@ -1,3 +1,5 @@
+FIXES:
+
 FROM python:3.9-slim-buster
 
 LABEL Name="Python Flask Demo App" Version=1.4.2
@@ -7,6 +9,10 @@ ARG srcDir=src
 WORKDIR /app
 COPY $srcDir/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Adding user and switching to it
+RUN adduser --disabled-password --gecos '' appuser
+USER appuser
 
 COPY $srcDir/run.py .
 COPY $srcDir/app ./app

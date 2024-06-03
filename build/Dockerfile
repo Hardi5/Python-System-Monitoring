@@ -12,6 +12,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN adduser --disabled-password --gecos '' appuser
 USER appuser
 
+ENV SECRET_KEY="TEST"
+
 COPY $srcDir/run.py .
 COPY $srcDir/app ./app
 

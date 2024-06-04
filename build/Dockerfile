@@ -9,8 +9,8 @@ COPY $srcDir/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Adding user and switching to it
-# RUN adduser --disabled-password --gecos '' appuser
-# USER appuser
+RUN adduser --disabled-password --gecos '' appuser
+USER appuser
 
 COPY $srcDir/run.py .
 COPY $srcDir/app ./app
